@@ -1,0 +1,406 @@
+{
+  "browserName": "electron",
+  "browserPath": "",
+  "browserVersion": "118.0.5993.159",
+  "config": {
+    "projectRoot": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment",
+    "projectName": "assessment",
+    "configFile": "cypress.config.js",
+    "isTextTerminal": true,
+    "animationDistanceThreshold": 5,
+    "arch": "x64",
+    "baseUrl": null,
+    "blockHosts": null,
+    "chromeWebSecurity": true,
+    "clientCertificates": [],
+    "defaultBrowser": null,
+    "defaultCommandTimeout": 4000,
+    "downloadsFolder": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/downloads",
+    "env": {},
+    "execTimeout": 60000,
+    "experimentalCspAllowList": false,
+    "experimentalFetchPolyfill": false,
+    "experimentalInteractiveRunEvents": false,
+    "experimentalRunAllSpecs": false,
+    "experimentalMemoryManagement": false,
+    "experimentalModifyObstructiveThirdPartyCode": false,
+    "experimentalSkipDomainInjection": null,
+    "experimentalJustInTimeCompile": false,
+    "experimentalOriginDependencies": false,
+    "experimentalSourceRewriting": false,
+    "experimentalSingleTabRunMode": false,
+    "experimentalStudio": false,
+    "experimentalWebKitSupport": false,
+    "fileServerFolder": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment",
+    "fixturesFolder": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/fixtures",
+    "excludeSpecPattern": "*.hot-update.js",
+    "includeShadowDom": false,
+    "keystrokeDelay": 0,
+    "modifyObstructiveCode": true,
+    "numTestsKeptInMemory": 0,
+    "platform": "linux",
+    "pageLoadTimeout": 60000,
+    "port": 34031,
+    "projectId": null,
+    "redirectionLimit": 20,
+    "reporter": "spec",
+    "reporterOptions": null,
+    "requestTimeout": 5000,
+    "resolvedNodePath": "/home/crio-user/.nvm/versions/node/v16.20.2/bin/node",
+    "resolvedNodeVersion": "16.20.2",
+    "responseTimeout": 30000,
+    "retries": {
+      "runMode": 0,
+      "openMode": 0
+    },
+    "screenshotOnRunFailure": true,
+    "screenshotsFolder": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/screenshots",
+    "slowTestThreshold": 10000,
+    "scrollBehavior": "top",
+    "supportFile": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/support/e2e.js",
+    "taskTimeout": 60000,
+    "testIsolation": true,
+    "trashAssetsBeforeRuns": true,
+    "userAgent": null,
+    "video": false,
+    "videoCompression": false,
+    "videosFolder": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/videos",
+    "viewportHeight": 660,
+    "viewportWidth": 1000,
+    "waitForAnimations": true,
+    "watchForFileChanges": false,
+    "specPattern": "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
+    "browsers": [
+      {
+        "channel": "stable",
+        "displayName": "Chrome",
+        "family": "chromium",
+        "majorVersion": "132",
+        "name": "chrome",
+        "path": "google-chrome",
+        "version": "132.0.6834.159"
+      },
+      {
+        "channel": "stable",
+        "displayName": "Chromium",
+        "family": "chromium",
+        "majorVersion": "112",
+        "name": "chromium",
+        "path": "chromium-browser",
+        "version": "112.0.5615.49"
+      },
+      {
+        "channel": "stable",
+        "displayName": "Electron",
+        "family": "chromium",
+        "majorVersion": 118,
+        "name": "electron",
+        "path": "",
+        "version": "118.0.5993.159"
+      }
+    ],
+    "cypressBinaryRoot": "/home/crio-user/.cache/Cypress/13.17.0/Cypress/resources/app",
+    "hosts": null,
+    "isInteractive": true,
+    "version": "13.17.0",
+    "testingType": "e2e",
+    "browser": null,
+    "cypressInternalEnv": "production"
+  },
+  "cypressVersion": "13.17.0",
+  "endedTestsAt": "2025-02-19T08:24:15.902Z",
+  "osName": "linux",
+  "osVersion": "Ubuntu - ",
+  "runs": [
+    {
+      "error": null,
+      "reporter": "spec",
+      "reporterStats": {
+        "suites": 7,
+        "tests": 14,
+        "passes": 9,
+        "pending": 0,
+        "failures": 5,
+        "start": "2025-02-19T08:23:38.747Z",
+        "end": "2025-02-19T08:24:15.910Z",
+        "duration": 37163
+      },
+      "screenshots": [
+        {
+          "height": 720,
+          "name": null,
+          "path": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/screenshots/spec.cy.js/Buildout Qtify v2 -- Navbar -- should check the search bar inside Navbar should contain the placeholder keyword 'search' inside it (failed).png",
+          "takenAt": "2025-02-19T08:23:50.032Z",
+          "width": 1280
+        },
+        {
+          "height": 720,
+          "name": null,
+          "path": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/screenshots/spec.cy.js/Buildout Qtify v2 -- Hero Section Tests -- should find the parent element with 100 Thousand Songs, ad-free text (case-insensitive) and an image (failed).png",
+          "takenAt": "2025-02-19T08:23:56.680Z",
+          "width": 1280
+        },
+        {
+          "height": 720,
+          "name": null,
+          "path": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/screenshots/spec.cy.js/Buildout Qtify v2 -- Hero Section Tests -- should check the background color of the parent element (failed).png",
+          "takenAt": "2025-02-19T08:24:01.443Z",
+          "width": 1280
+        },
+        {
+          "height": 720,
+          "name": null,
+          "path": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/screenshots/spec.cy.js/Buildout Qtify v2 -- Cards Tests -- should match the count of top, and new album cards with their respective API responses (failed).png",
+          "takenAt": "2025-02-19T08:24:06.709Z",
+          "width": 1280
+        },
+        {
+          "height": 720,
+          "name": null,
+          "path": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/screenshots/spec.cy.js/Buildout Qtify v2 -- Albums Section tests -- should show cards for Top and New Albums and verify the 'Show All' functionality (failed).png",
+          "takenAt": "2025-02-19T08:24:11.471Z",
+          "width": 1280
+        }
+      ],
+      "spec": {
+        "absolute": "/home/crio-user/workspace/lokeshvenkat36-ME_BUILDOUT_QTIFY_V2/assessment/cypress/e2e/spec.cy.js",
+        "fileExtension": ".js",
+        "fileName": "spec",
+        "name": "spec.cy.js",
+        "relative": "cypress/e2e/spec.cy.js"
+      },
+      "stats": {
+        "duration": 37168,
+        "endedAt": "2025-02-19T08:24:15.902Z",
+        "failures": 5,
+        "passes": 9,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2025-02-19T08:23:38.734Z",
+        "suites": 7,
+        "tests": 14
+      },
+      "tests": [
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 1898,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Navbar",
+            "Should contain logo, search bar, and a button"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 864,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Navbar",
+            "should check if the logo is vertically centered and has space to its left"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "failed"
+            }
+          ],
+          "displayError": "AssertionError: Timed out retrying after 4000ms: expected 'Search...' to match /search a song|search a album|search an album/i\n    at Context.eval (webpack://buildout-qtify-v2/./cypress/e2e/spec.cy.js:55:11)",
+          "duration": 4954,
+          "state": "failed",
+          "title": [
+            "Buildout Qtify v2",
+            "Navbar",
+            "should check the search bar inside Navbar should contain the placeholder keyword 'search' inside it"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 340,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Navbar",
+            "should check if the button has a variant of black background"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 290,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Navbar",
+            "should check if the button's text color is a variant of green"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 283,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Navbar",
+            "should check if the button has some border-radius"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 416,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Navbar",
+            "should check if hovering on the button changes the cursor to a pointer"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 275,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Navbar",
+            "should check if the button is styled with 'Poppins' font"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "failed"
+            }
+          ],
+          "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '/100 Thousand Songs, ad-free/i' but never did.\n    at Context.eval (webpack://buildout-qtify-v2/./cypress/e2e/spec.cy.js:138:11)",
+          "duration": 4641,
+          "state": "failed",
+          "title": [
+            "Buildout Qtify v2",
+            "Hero Section Tests",
+            "should find the parent element with \"100 Thousand Songs, ad-free\" text (case-insensitive) and an image"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "failed"
+            }
+          ],
+          "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '/100 Thousand Songs, ad-free/i' but never did.\n    at Context.eval (webpack://buildout-qtify-v2/./cypress/e2e/spec.cy.js:154:11)",
+          "duration": 4722,
+          "state": "failed",
+          "title": [
+            "Buildout Qtify v2",
+            "Hero Section Tests",
+            "should check the background color of the parent element"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "failed"
+            }
+          ],
+          "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Strident Analyst' but never did.\n    at eval (webpack://buildout-qtify-v2/./cypress/e2e/spec.cy.js:190:15)\n    at Context.eval (webpack://buildout-qtify-v2/./cypress/e2e/spec.cy.js:187:20)",
+          "duration": 5045,
+          "state": "failed",
+          "title": [
+            "Buildout Qtify v2",
+            "Cards Tests",
+            "should match the count of top, and new album cards with their respective API responses"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "failed"
+            }
+          ],
+          "displayError": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '/show all/i' but never did.\n    at checkAlbumVisibilityAndToggleShowAll (webpack://buildout-qtify-v2/./cypress/e2e/spec.cy.js:231:13)\n    at Context.eval (webpack://buildout-qtify-v2/./cypress/e2e/spec.cy.js:246:8)",
+          "duration": 4775,
+          "state": "failed",
+          "title": [
+            "Buildout Qtify v2",
+            "Albums Section tests",
+            "should show cards for Top and New Albums and verify the 'Show All' functionality"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 743,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Slider functionality tests",
+            "should verify if the first two albums are not visible after clicking the slider's next button 4 times"
+          ]
+        },
+        {
+          "attempts": [
+            {
+              "state": "passed"
+            }
+          ],
+          "displayError": null,
+          "duration": 3057,
+          "state": "passed",
+          "title": [
+            "Buildout Qtify v2",
+            "Songs test",
+            "should match the count of song cards with their respective API responses"
+          ]
+        }
+      ],
+      "video": null
+    }
+  ],
+  "startedTestsAt": "2025-02-19T08:23:38.734Z",
+  "totalDuration": 37168,
+  "totalFailed": 5,
+  "totalPassed": 9,
+  "totalPending": 0,
+  "totalSkipped": 0,
+  "totalSuites": 7,
+  "totalTests": 14
+}

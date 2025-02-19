@@ -1,0 +1,8 @@
+.carouselContainer {
+  position: relative;
+  width: 100%;
+}
+
+.swiper-container {
+  padding: 20px 0;
+}
