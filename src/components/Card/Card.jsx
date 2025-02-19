@@ -10,6 +10,7 @@ const CustomCard = ({ type }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/${type}`);
+        console.log('API Response:', response);
         // Ensure the response data is an array
         if (Array.isArray(response.data)) {
           setItems(response.data);
