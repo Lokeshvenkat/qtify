@@ -7,11 +7,16 @@ const CustomCard = ({ type }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // Fetch data based on the type (e.g., 'top-albums', 'new-albums')
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/${type}`);
-        setItems(response.data);
+        // Ensure the response data is an array
+        if (Array.isArray(response.data)) {
+          setItems(response.data);
+        } else {
+          console.error(`Expected an array but received:`, response.data);
+          setItems([]);
+        }
       } catch (error) {
         console.error(`Error fetching ${type}:`, error);
       }
@@ -22,7 +27,7 @@ const CustomCard = ({ type }) => {
 
   return (
     <div>
-      {items.map((item, index) => (
+      {Array.isArray(items) && items.map((item, index) => (
         <Card key={index} className={styles.card}>
           <CardMedia
             className={styles.cardMedia}
