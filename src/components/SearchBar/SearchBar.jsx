@@ -6,7 +6,7 @@ const SearchBar = () => {
     <div className={styles.searchBar}>
       <input
         type="text"
-        placeholder="search"
+        placeholder="search a song"
         className={styles.searchInput}
       />
     </div>
