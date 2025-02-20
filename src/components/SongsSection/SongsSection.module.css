@@ -5,3 +5,14 @@
 .tabs {
   margin-bottom: 20px;
 }
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.carouselItem {
+  min-width: 200px;
+  flex: 1;
+}
