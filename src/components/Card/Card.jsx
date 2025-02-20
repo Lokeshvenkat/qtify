@@ -24,9 +24,6 @@ const CustomCard = ({ type }) => {
         case 'genres':
           url = 'https://qtify-backend-labs.crio.do/genres';
           break;
-        default:
-          console.error('Invalid type:', type);
-          return;
       }
 
       try {
