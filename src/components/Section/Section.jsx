@@ -22,12 +22,26 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   // Determine the number of items to display based on isCollapsed state
   const displayedItems = isCollapsed ? items.slice(0, 4) : items;
 
+  // Determine the type based on the title
+  let type;
+  if (title.toLowerCase().includes('top albums')) {
+    type = 'top-albums';
+  } else if (title.toLowerCase().includes('new albums')) {
+    type = 'new-albums';
+  } else if (title.toLowerCase().includes('songs')) {
+    type = 'songs';
+  } else if (title.toLowerCase().includes('genres')) {
+    type = 'genres';
+  } else {
+    console.error('Invalid title for determining type:', title);
+  }
+
   return (
     <div>
       <h2>{title}</h2>
       <div className="card-list">
         {displayedItems.map((item, index) => (
-          <CustomCard key={index} item={item} type="album" />
+          <CustomCard key={index} item={item} type={type} />
         ))}
       </div>
       <button onClick={toggleView}>
