@@ -5,11 +5,11 @@ function NewAlbumsSection() {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleView = () => {
-    console.log('Toggling view:', !isCollapsed);
+    //console.log('Toggling view:', !isCollapsed);
     setIsCollapsed(!isCollapsed);
   };
 
-  console.log('NewAlbumsSection rendered with isCollapsed:', isCollapsed);
+  //console.log('NewAlbumsSection rendered with isCollapsed:', isCollapsed);
 
   return (
     <Section
