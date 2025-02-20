@@ -10,8 +10,27 @@ const CustomCard = ({ type }) => {
     console.log(`Fetching data for type: ${type}`);
 
     const fetchData = async () => {
+      let url;
+      switch (type) {
+        case 'new-albums':
+          url = 'https://qtify-backend-labs.crio.do/albums/new';
+          break;
+        case 'top-albums':
+          url = 'https://qtify-backend-labs.crio.do/albums/top';
+          break;
+        case 'songs':
+          url = 'https://qtify-backend-labs.crio.do/songs';
+          break;
+        case 'genres':
+          url = 'https://qtify-backend-labs.crio.do/genres';
+          break;
+        default:
+          console.error('Invalid type:', type);
+          return;
+      }
+
       try {
-        const response = await axios.get(`/api/${type}`);
+        const response = await axios.get(url);
         console.log('API Response:', response);
 
         if (response.data && Array.isArray(response.data)) {
@@ -41,7 +60,7 @@ const CustomCard = ({ type }) => {
           />
           <CardContent className={styles.cardContent}>
             <Chip
-              label={type === 'song' ? `${item.likes || 0} Likes` : `${item.follows || 0} Follows`}
+              label={type === 'songs' ? `${item.likes || 0} Likes` : `${item.follows || 0} Follows`}
               className={styles.chip}
               size="small"
             />
