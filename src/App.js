@@ -10,7 +10,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 function App() {
   const apiEndpointTopAlbums = 'https://qtify-backend-labs.crio.do/albums/top';
 
-  console.log("App component rendered");
+  //console.log("App component rendered");
 
   return (
     <div className="App">
