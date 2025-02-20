@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import Section from '../Section/Section';
 
 function NewAlbumsSection() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleView = () => {
+    console.log('Toggling view:', !isCollapsed);
     setIsCollapsed(!isCollapsed);
   };
+
+  console.log('NewAlbumsSection rendered with isCollapsed:', isCollapsed);
 
   return (
     <Section
