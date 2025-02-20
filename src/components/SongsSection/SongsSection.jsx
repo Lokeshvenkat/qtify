@@ -27,7 +27,7 @@ const SongsSection = () => {
     axios
       .get('https://qtify-backend-labs.crio.do/genres')
       .then((response) => {
-        console.log('Genres API Response:', response.data); 
+        //console.log('Genres API Response:', response.data); 
         if (Array.isArray(response.data.data)) {
           setGenres(response.data.data);
         } else {
@@ -43,7 +43,7 @@ const SongsSection = () => {
 
   const filteredSongs = selectedGenre === 'All' ? songs : songs.filter(song => song.genre === selectedGenre);
 
-  console.log('Filtered Songs:', filteredSongs.map(song => song.title)); 
+  //console.log('Filtered Songs:', filteredSongs.map(song => song.title)); 
   if (loading) {
     return <p data-testid="loading-text">Loading songs...</p>;
   }
