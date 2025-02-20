@@ -5,7 +5,7 @@ import FeedbackButton from '../FeedbackButton/FeedbackButton';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
-  console.log("Navbar component rendered");
+  //console.log("Navbar component rendered");
   return (
     <nav className={styles.navbar}>
       <Logo />
