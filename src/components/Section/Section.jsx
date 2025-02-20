@@ -6,7 +6,6 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the API endpoint
     const fetchData = async () => {
       try {
         const response = await axios.get(apiEndpoint);
@@ -19,10 +18,8 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
     fetchData();
   }, [apiEndpoint]);
 
-  // Determine the number of items to display based on isCollapsed state
   const displayedItems = isCollapsed ? items.slice(0, 4) : items;
 
-  // Determine the type based on the title
   let type;
   if (title.toLowerCase().includes('top albums')) {
     type = 'top-albums';
@@ -44,7 +41,7 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
           <CustomCard key={index} item={item} type={type} />
         ))}
       </div>
-      <button onClick={toggleView}>
+      <button onClick={toggleView} data-testid="toggle-button">
         {isCollapsed ? 'Show All' : 'Show Less'}
       </button>
     </div>
