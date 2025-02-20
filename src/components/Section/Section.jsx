@@ -41,8 +41,8 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
           <CustomCard key={index} item={item} type={type} />
         ))}
       </div>
-      <button onClick={toggleView} data-testid="toggle-button">
-        {isCollapsed ? 'Show All' : 'Show Less'}
+      <button onClick={toggleView}>
+        {isCollapsed ? 'Show All' : 'Collapse'}
       </button>
     </div>
   );
