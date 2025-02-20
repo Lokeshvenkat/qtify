@@ -8,35 +8,33 @@ const SongsSection = () => {
   const [songs, setSongs] = useState([]);
   const [genres, setGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState('All');
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     axios
       .get('https://qtify-backend-labs.crio.do/songs')
       .then((response) => {
-        console.log('Songs data:', response.data);
+        console.log('Songs API Response:', response.data); 
         if (Array.isArray(response.data)) {
           setSongs(response.data);
         } else {
-          console.error('Songs data is not an array:', response.data);
+          console.error('Songs API returned unexpected format:', response.data);
         }
       })
-      .catch((error) => {
-        console.error('Error fetching songs data:', error);
-      });
+      .catch((error) => console.error('Error fetching songs:', error))
+      .finally(() => setLoading(false)); 
 
     axios
       .get('https://qtify-backend-labs.crio.do/genres')
       .then((response) => {
-        console.log('Genres data:', response.data);
+        console.log('Genres API Response:', response.data); 
         if (Array.isArray(response.data.data)) {
           setGenres(response.data.data);
         } else {
-          console.error('Genres data is not an array:', response.data);
+          console.error('Genres API returned unexpected format:', response.data);
         }
       })
-      .catch((error) => {
-        console.error('Error fetching genres data:', error);
-      });
+      .catch((error) => console.error('Error fetching genres:', error));
   }, []);
 
   const handleTabChange = (event, newValue) => {
@@ -45,10 +43,13 @@ const SongsSection = () => {
 
   const filteredSongs = selectedGenre === 'All' ? songs : songs.filter(song => song.genre === selectedGenre);
 
-  console.log('Filtered Songs:', filteredSongs.map(song => song.title));
+  console.log('Filtered Songs:', filteredSongs.map(song => song.title)); 
+  if (loading) {
+    return <p data-testid="loading-text">Loading songs...</p>;
+  }
 
   return (
-    <div className={styles.songsSection}>
+    <div className={styles.songsSection} data-testid="songs-section">
       <h2>Songs</h2>
       <Tabs
         value={selectedGenre}
@@ -56,13 +57,19 @@ const SongsSection = () => {
         variant="scrollable"
         scrollButtons="auto"
         className={styles.tabs}
+        data-testid="genre-tabs"
       >
         <Tab value="All" label="All" />
         {Array.isArray(genres) && genres.map((genre) => (
-          <Tab key={genre.key} value={genre.key} label={genre.label} />
+          <Tab key={genre.key} value={genre.key} label={genre.label} data-testid={`tab-${genre.key}`} />
         ))}
       </Tabs>
-      <Carousel items={filteredSongs} type="song" />
+      
+      {filteredSongs.length > 0 ? (
+        <Carousel items={filteredSongs} type="song" />
+      ) : (
+        <p data-testid="no-songs-text">No songs available</p>
+      )}
     </div>
   );
 };
