@@ -49,28 +49,27 @@ const SongsSection = () => {
   }
 
   return (
-    <div className={styles.songsSection} data-testid="songs-section">
-      <h2>Songs</h2>
-      <Tabs
-        value={selectedGenre}
-        onChange={handleTabChange}
-        variant="scrollable"
-        scrollButtons="auto"
-        className={styles.tabs}
-        data-testid="genre-tabs"
-      >
-        <Tab value="All" label="All" />
-        {Array.isArray(genres) && genres.map((genre) => (
-          <Tab key={genre.key} value={genre.key} label={genre.label} data-testid={`tab-${genre.key}`} />
-        ))}
-      </Tabs>
-      
-      {filteredSongs.length > 0 ? (
-        <Carousel items={filteredSongs} type="song" />
-      ) : (
-        <p data-testid="no-songs-text">No songs available</p>
-      )}
-    </div>
+   <div className={styles.songsSection}>
+  <h2>Songs</h2>
+  <Tabs
+    value={selectedGenre}
+    onChange={handleTabChange}
+    variant="scrollable"
+    scrollButtons="auto"
+    className={styles.tabs}
+  >
+    <Tab value="All" label="All" />
+    {Array.isArray(genres) && genres.map((genre) => (
+      <Tab key={genre.key} value={genre.key} label={genre.label} />
+    ))}
+  </Tabs>
+  {filteredSongs.length > 0 ? (
+    <Carousel items={filteredSongs} type="song" />
+  ) : (
+    <p>No songs available for the selected genre.</p>
+  )}
+</div>
+
   );
 };
 
