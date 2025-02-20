@@ -45,6 +45,8 @@ const SongsSection = () => {
 
   const filteredSongs = selectedGenre === 'All' ? songs : songs.filter(song => song.genre === selectedGenre);
 
+  console.log('Filtered Songs:', filteredSongs.map(song => song.title));
+
   return (
     <div className={styles.songsSection}>
       <h2>Songs</h2>
