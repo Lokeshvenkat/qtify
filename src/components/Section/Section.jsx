@@ -33,6 +33,8 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
     console.error('Invalid title for determining type:', title);
   }
 
+  console.log('Filtered Items:', displayedItems);
+
   return (
     <div>
       <h2>{title}</h2>
