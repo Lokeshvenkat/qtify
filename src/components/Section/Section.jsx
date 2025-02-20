@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CustomCard from '../Card/Card';
+import styles from './Section.module.css'; 
 
 const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   const [items, setItems] = useState([]);
@@ -34,14 +35,14 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   }
 
   return (
-    <div>
-      <h2>{title}</h2>
-      <div className="card-list">
+    <div className={styles.section}>
+      <h2 className={styles.sectionHeader}>{title}</h2>
+      <div className={styles.grid}>
         {displayedItems.map((item, index) => (
           <CustomCard key={index} item={item} type={type} />
         ))}
       </div>
-      <button onClick={toggleView}>
+      <button onClick={toggleView} className={styles.toggleButton}>
         {isCollapsed ? 'Show All' : 'Collapse'}
       </button>
     </div>
