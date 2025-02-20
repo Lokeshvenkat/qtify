@@ -7,16 +7,18 @@ const CustomCard = ({ type }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+    console.log(`Fetching data for type: ${type}`);
+
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/${type}`);
         console.log('API Response:', response);
-        // Ensure the response data is an array
-        if (Array.isArray(response.data)) {
+
+        if (response.data && Array.isArray(response.data)) {
+          console.log('Fetched items:', response.data);
           setItems(response.data);
         } else {
-          console.error(`Expected an array but received:`, response.data);
-          setItems([]);
+          console.error('Unexpected response format:', response.data);
         }
       } catch (error) {
         console.error(`Error fetching ${type}:`, error);
@@ -26,9 +28,11 @@ const CustomCard = ({ type }) => {
     fetchData();
   }, [type]);
 
+  console.log('Current items state:', items);
+
   return (
     <div>
-      {Array.isArray(items) && items.map((item, index) => (
+      {items.map((item, index) => (
         <Card key={index} className={styles.card}>
           <CardMedia
             className={styles.cardMedia}
