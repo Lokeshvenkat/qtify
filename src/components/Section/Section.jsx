@@ -3,8 +3,9 @@ import axios from 'axios';
 import CustomCard from '../Card/Card';
 import styles from './Section.module.css'; 
 
-const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
+const Section = ({ title, apiEndpoint }) => {
   const [items, setItems] = useState([]);
+  const [isCollapsed, setIsCollapsed] = useState(true); // Initialize as collapsed
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +19,10 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
 
     fetchData();
   }, [apiEndpoint]);
+
+  const toggleView = () => {
+    setIsCollapsed(!isCollapsed); // Toggle the collapsed state
+  };
 
   const displayedItems = isCollapsed ? items.slice(0, 4) : items;
 
