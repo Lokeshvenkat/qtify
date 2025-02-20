@@ -7,7 +7,7 @@ const CustomCard = ({ type }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    console.log(`Fetching data for type: ${type}`);
+    //console.log(`Fetching data for type: ${type}`);
 
     const fetchData = async () => {
       let url;
@@ -31,10 +31,10 @@ const CustomCard = ({ type }) => {
 
       try {
         const response = await axios.get(url);
-        console.log('API Response:', response);
+        //console.log('API Response:', response);
 
         if (response.data && Array.isArray(response.data)) {
-          console.log('Fetched items:', response.data);
+          //console.log('Fetched items:', response.data);
           setItems(response.data);
         } else {
           console.error('Unexpected response format:', response.data);
@@ -47,7 +47,7 @@ const CustomCard = ({ type }) => {
     fetchData();
   }, [type]);
 
-  console.log('Current items state:', items);
+  //console.log('Current items state:', items);
 
   return (
     <div>
