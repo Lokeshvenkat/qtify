@@ -57,8 +57,8 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
         </div>
       )}
       <button onClick={toggleView} className={styles.toggleButton}>
-        {isCollapsed ? 'Show All' : 'Collapse'}
-      </button>
+  {isCollapsed ? 'Show All' : 'Collapse'}
+</button>
     </div>
   );
 };
