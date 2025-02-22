@@ -13,7 +13,6 @@ const SongsSection = () => {
     axios
       .get('https://qtify-backend-labs.crio.do/songs')
       .then((response) => {
-        console.log('Songs data:', response.data);
         if (Array.isArray(response.data)) {
           const uniqueSongs = Array.from(new Map(response.data.map(song => [song.title, song])).values());
           setSongs(uniqueSongs);
