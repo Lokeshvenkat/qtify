@@ -12,7 +12,7 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
       try {
         const response = await axios.get(apiEndpoint, {
           headers: {
-            'Accept': 'application/json', // Ensure the server knows you expect JSON
+            'Accept': 'application/json',
           },
         });
 
@@ -24,7 +24,7 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
       } catch (error) {
         console.error(`Error fetching data from ${apiEndpoint}:`, error);
       } finally {
-        setLoading(false); // Set loading to false after the request completes
+        setLoading(false);
       }
     };
 
