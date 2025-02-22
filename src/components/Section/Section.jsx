@@ -5,11 +5,17 @@ import styles from './Section.module.css';
 
 const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(apiEndpoint);
+        const response = await axios.get(apiEndpoint, {
+          headers: {
+            'Accept': 'application/json', 
+          },
+        });
+
         if (response.data && Array.isArray(response.data)) {
           setItems(response.data);
         } else {
@@ -17,6 +23,8 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
         }
       } catch (error) {
         console.error(`Error fetching data from ${apiEndpoint}:`, error);
+      } finally {
+        setLoading(false); 
       }
     };
 
@@ -41,11 +49,15 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   return (
     <div className={styles.section}>
       <h2 className={styles.sectionHeader}>{title}</h2>
-      <div className={styles.grid}>
-        {displayedItems.map((item, index) => (
-          <CustomCard key={index} item={item} type={type} />
-        ))}
-      </div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className={styles.grid}>
+          {displayedItems.map((item, index) => (
+            <CustomCard key={index} item={item} type={type} />
+          ))}
+        </div>
+      )}
       <button onClick={toggleView} className={styles.toggleButton}>
         {isCollapsed ? 'Show All' : 'Collapse'}
       </button>
