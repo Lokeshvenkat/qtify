@@ -7,7 +7,7 @@ const SearchBar = () => {
     <div className={styles.searchBar}>
       <input
         type="text"
-        placeholder="search a song"
+        placeholder="search an album of your choice"
         className={styles.searchInput}
       />
        <SearchIcon className={styles["search-icon"]} />
