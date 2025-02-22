@@ -43,17 +43,14 @@ const toggleTopAlbumsView = () => {
   };
   console.log('Rendering NewAlbumsSection');
 
-  return (
-    <div>
-      <Section
-        title="New Albums"
-        items={newAlbums}
-        isCollapsed={isNewAlbumsCollapsed}
-        toggleView={toggleNewAlbumsView}
-        type="new-albums"
-      />
-    </div>
-  );
+return (
+  <Section
+    title="New Albums"
+    apiEndpoint="https://qtify-backend-labs.crio.do/albums/new"
+    isCollapsed={isNewAlbumsCollapsed}
+    toggleView={toggleNewAlbumsView}
+  />
+);
 };
 
 export default NewAlbumsSection;
