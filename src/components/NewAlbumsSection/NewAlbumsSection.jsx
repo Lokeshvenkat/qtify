@@ -34,14 +34,13 @@ const NewAlbumsSection = () => {
     fetchData();
   }, []);
 
-  const toggleTopAlbumsView = () => {
-    setIsTopAlbumsCollapsed(!isTopAlbumsCollapsed);
+const toggleTopAlbumsView = () => {
+    setIsTopAlbumsCollapsed(prev => !prev);
   };
 
   const toggleNewAlbumsView = () => {
-    setIsNewAlbumsCollapsed(!isNewAlbumsCollapsed);
+    setIsNewAlbumsCollapsed(prev => !prev);
   };
-
   console.log('Rendering NewAlbumsSection');
 
   return (
