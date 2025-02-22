@@ -1,88 +1,41 @@
-/* Container for the entire section */
 .container {
   padding: 20px;
 }
 
-/* Section Header */
 .sectionHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  color: white;
 }
 
-/* "Show All" Button */
 .showAllBtn {
   background-color: black;
-  color: #34C94B;
+  color: white;
   border: none;
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 5px;
-  font-weight: bold;
 }
 
-.showAllBtn:hover {
-  background-color: #1a1a1a;
-}
-
-/* Swiper Carousel */
 .albumCarousel {
   width: 100%;
-  position: relative;
 }
 
-/* Individual Album Slide */
 .albumSlide {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Album Image */
 .albumImage {
   width: 100px;
   height: 100px;
   border-radius: 10px;
 }
 
-/* Album Title */
 .albumTitle {
   text-align: center;
   font-size: 14px;
   margin-top: 5px;
-  color: white;
-}
-
-/* Swiper Navigation Buttons */
-.navButton {
-  background-color: #34C94B;
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.navButton:hover {
-  background-color: #2EAC42;
-}
-
-/* Left Navigation Button */
-.navButtonLeft {
-  left: -50px;
-}
-
-/* Right Navigation Button */
-.navButtonRight {
-  right: -50px;
 }
