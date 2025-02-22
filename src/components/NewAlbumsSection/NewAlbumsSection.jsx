@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Section from '../Section/Section';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import styles from './AlbumSection.module.css'; // Import styles
 
 const NewAlbumsSection = () => {
   const [topAlbums, setTopAlbums] = useState([]);
   const [newAlbums, setNewAlbums] = useState([]);
-  const [isTopAlbumsCollapsed, setIsTopAlbumsCollapsed] = useState(true);
-  const [isNewAlbumsCollapsed, setIsNewAlbumsCollapsed] = useState(true);
 
   useEffect(() => {
-
     const fetchData = async () => {
       try {
         const [topAlbumsResponse, newAlbumsResponse] = await axios.all([
@@ -17,14 +18,8 @@ const NewAlbumsSection = () => {
           axios.get('https://qtify-backend-labs.crio.do/albums/new'),
         ]);
 
-        console.log('Top Albums API Response:', topAlbumsResponse.data);
-      console.log('New Albums API Response:', newAlbumsResponse.data);
-
-        const uniqueTopAlbums = Array.from(new Map(topAlbumsResponse.data.map(album => [album.title, album])).values());
-        const uniqueNewAlbums = Array.from(new Map(newAlbumsResponse.data.map(album => [album.title, album])).values());
-
-        setTopAlbums(uniqueTopAlbums);
-        setNewAlbums(uniqueNewAlbums);
+        setTopAlbums(topAlbumsResponse.data);
+        setNewAlbums(newAlbumsResponse.data);
       } catch (error) {
         console.error('Error fetching albums data:', error);
       }
@@ -33,31 +28,49 @@ const NewAlbumsSection = () => {
     fetchData();
   }, []);
 
-const toggleTopAlbumsView = () => {
-    setIsTopAlbumsCollapsed(prev => !prev);
-  };
+  return (
+    <div className={styles.container}>
+      {/* Top Albums Section */}
+      <div className={styles.sectionHeader}>
+        <h2>Top Albums</h2>
+        <button className={styles.showAllBtn}>Show All</button>
+      </div>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={5}
+        navigation
+        className={styles.albumCarousel}
+      >
+        {topAlbums.map((album) => (
+          <SwiperSlide key={album.id} className={styles.albumSlide}>
+            <img src={album.image} alt={album.title} className={styles.albumImage} />
+            <p className={styles.albumTitle}>{album.title}</p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-  const toggleNewAlbumsView = () => {
-    setIsNewAlbumsCollapsed(prev => !prev);
-  };
-
-return (
-  <div>
-    <Section
-      title="Top Albums"
-      apiEndpoint="https://qtify-backend-labs.crio.do/albums/top"
-      isCollapsed={isTopAlbumsCollapsed}
-      toggleView={toggleTopAlbumsView}
-    />
-    
-    <Section
-      title="New Albums"
-      apiEndpoint="https://qtify-backend-labs.crio.do/albums/new"
-      isCollapsed={isNewAlbumsCollapsed}
-      toggleView={toggleNewAlbumsView}
-    />
-  </div>
-);
+      {/* New Albums Section */}
+      <div className={styles.sectionHeader}>
+        <h2>New Albums</h2>
+        <button className={styles.showAllBtn}>Show All</button>
+      </div>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={5}
+        navigation
+        className={styles.albumCarousel}
+      >
+        {newAlbums.map((album) => (
+          <SwiperSlide key={album.id} className={styles.albumSlide}>
+            <img src={album.image} alt={album.title} className={styles.albumImage} />
+            <p className={styles.albumTitle}>{album.title}</p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 };
 
 export default NewAlbumsSection;
