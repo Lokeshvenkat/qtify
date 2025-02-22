@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Carousel from '../Carousel/Carousel';
 import styles from './SongsSection.module.css';
+import { Tabs, Tab } from '@mui/material';
 
 const SongsSection = () => {
   const [songs, setSongs] = useState([]);
