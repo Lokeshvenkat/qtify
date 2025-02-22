@@ -6,6 +6,7 @@ import SongsSection from './components/SongsSection/SongsSection';
 import NewAlbumsSection from './components/NewAlbumsSection/NewAlbumsSection';
 import Logo from './components/Logo/Logo.jsx';
 import SearchBar from './components/SearchBar/SearchBar';
+import Faq from './components/Faq/Faq';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <HeroSection />
       <NewAlbumsSection />
       <SongsSection />
+     <Faq/>
     </div>
   );
 }
