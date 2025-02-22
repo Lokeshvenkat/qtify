@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Box, Button, Typography, IconButton } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
+import styles from './NewAlbumsSection.module.css';
 
 const NewAlbumsSection = () => {
   const [topAlbums, setTopAlbums] = useState([]);
@@ -39,7 +40,7 @@ const NewAlbumsSection = () => {
         </Button>
       </Box>
       <Box sx={{ position: 'relative' }}>
-        <IconButton className="prevTop" sx={navButtonStyle}>
+        <IconButton className={`prevTop ${styles.navButton}`}>
           <ArrowBack />
         </IconButton>
         <Swiper
@@ -50,14 +51,14 @@ const NewAlbumsSection = () => {
         >
           {topAlbums.map((album) => (
             <SwiperSlide key={album.id}>
-              <Box sx={albumCardStyle}>
-                <img src={album.image} alt={album.title} style={imageStyle} />
+              <Box className={styles.albumCard}>
+                <img src={album.image} alt={album.title} className={styles.image} />
                 <Typography variant="subtitle1" sx={{ mt: 1, textAlign: 'center' }}>{album.title}</Typography>
               </Box>
             </SwiperSlide>
           ))}
         </Swiper>
-        <IconButton className="nextTop" sx={navButtonStyle}>
+        <IconButton className={`nextTop ${styles.navButton}`}>
           <ArrowForward />
         </IconButton>
       </Box>
@@ -70,7 +71,7 @@ const NewAlbumsSection = () => {
         </Button>
       </Box>
       <Box sx={{ position: 'relative' }}>
-        <IconButton className="prevNew" sx={navButtonStyle}>
+        <IconButton className={`prevNew ${styles.navButton}`}>
           <ArrowBack />
         </IconButton>
         <Swiper
@@ -81,14 +82,14 @@ const NewAlbumsSection = () => {
         >
           {newAlbums.map((album) => (
             <SwiperSlide key={album.id}>
-              <Box sx={albumCardStyle}>
-                <img src={album.image} alt={album.title} style={imageStyle} />
+              <Box className={styles.albumCard}>
+                <img src={album.image} alt={album.title} className={styles.image} />
                 <Typography variant="subtitle1" sx={{ mt: 1, textAlign: 'center' }}>{album.title}</Typography>
               </Box>
             </SwiperSlide>
           ))}
         </Swiper>
-        <IconButton className="nextNew" sx={navButtonStyle}>
+        <IconButton className={`nextNew ${styles.navButton}`}>
           <ArrowForward />
         </IconButton>
       </Box>
