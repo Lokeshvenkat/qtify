@@ -10,7 +10,7 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(url);
+        const response = await axios.get(apiEndpoint);
 
         if (response.data && Array.isArray(response.data)) {
         
