@@ -1,24 +1,34 @@
 import React, { useState } from 'react';
-import Section from '../Section/Section';
+import Section from './Section';
 
-function NewAlbumsSection() {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+const NewAlbumsSection = () => {
+  const [isTopAlbumsCollapsed, setIsTopAlbumsCollapsed] = useState(true);
+  const [isNewAlbumsCollapsed, setIsNewAlbumsCollapsed] = useState(true);
 
-  const toggleView = () => {
-    //console.log('Toggling view:', !isCollapsed);
-    setIsCollapsed(!isCollapsed);
+  const toggleTopAlbumsView = () => {
+    setIsTopAlbumsCollapsed(!isTopAlbumsCollapsed);
   };
 
-  //console.log('NewAlbumsSection rendered with isCollapsed:', isCollapsed);
+  const toggleNewAlbumsView = () => {
+    setIsNewAlbumsCollapsed(!isNewAlbumsCollapsed);
+  };
 
   return (
-    <Section
-      title="New Albums"
-      apiEndpoint="https://qtify-backend-labs.crio.do/albums/new"
-      isCollapsed={isCollapsed}
-      toggleView={toggleView}
-    />
+    <div>
+      <Section
+        title="Top Albums"
+        apiEndpoint="https://qtify-backend-labs.crio.do/albums/top"
+        isCollapsed={isTopAlbumsCollapsed}
+        toggleView={toggleTopAlbumsView}
+      />
+      <Section
+        title="New Albums"
+        apiEndpoint="https://qtify-backend-labs.crio.do/albums/new"
+        isCollapsed={isNewAlbumsCollapsed}
+        toggleView={toggleNewAlbumsView}
+      />
+    </div>
   );
-}
+};
 
 export default NewAlbumsSection;
