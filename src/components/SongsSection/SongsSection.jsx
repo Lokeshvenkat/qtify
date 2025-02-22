@@ -15,7 +15,8 @@ const SongsSection = () => {
       .then((response) => {
         console.log('Songs data:', response.data);
         if (Array.isArray(response.data)) {
-          setSongs(response.data);
+          const uniqueSongs = Array.from(new Map(response.data.map(song => [song.title, song])).values());
+          setSongs(uniqueSongs);
         } else {
           console.error('Songs data is not an array:', response.data);
         }
