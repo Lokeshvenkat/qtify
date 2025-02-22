@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Box, Button, Typography, IconButton } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import styles from './NewAlbumsSection.module.css';
+import styles from './NewAlbumSection.module.css'; 
 
 const NewAlbumsSection = () => {
   const [topAlbums, setTopAlbums] = useState([]);
