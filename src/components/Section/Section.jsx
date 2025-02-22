@@ -10,14 +10,10 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(apiEndpoint, {
-          headers: {
-            'Accept': 'application/json',
-          },
-        });
+        const response = await axios.get(url);
 
         if (response.data && Array.isArray(response.data)) {
-          // Remove duplicates based on a unique identifier, e.g., title
+        
           const uniqueItems = Array.from(new Map(response.data.map(item => [item.title, item])).values());
           setItems(uniqueItems);
         } else {
