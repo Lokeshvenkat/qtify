@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SearchBar.module.css';
-import { FaSearch } from 'react-icons/fa';
+import SearchIcon from '@mui/icons-material/Search';
 
 const SearchBar = () => {
   return (
@@ -10,7 +10,7 @@ const SearchBar = () => {
         placeholder="search a song"
         className={styles.searchInput}
       />
-       <FaSearch className={styles["search-icon"]} />
+       <SearchIcon className={styles["search-icon"]} />
     </div>
   );
 };
