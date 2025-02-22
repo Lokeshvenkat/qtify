@@ -1,25 +1,41 @@
-.newAlbumsSection {
-    padding: 20px;
-     color: white;
-  }
-  
-  .sectionTitle {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .collapseButton {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .collapseButton:hover {
-    background-color: #0056b3;
-  }
-  
+.container {
+  padding: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.showAllBtn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.albumCarousel {
+  width: 100%;
+}
+
+.albumSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.albumImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.albumTitle {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px;
+}
