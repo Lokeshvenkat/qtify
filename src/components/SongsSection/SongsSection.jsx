@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Tabs, Tab } from '@mui/material';
 import Carousel from '../Carousel/Carousel';
 import styles from './SongsSection.module.css';
 
