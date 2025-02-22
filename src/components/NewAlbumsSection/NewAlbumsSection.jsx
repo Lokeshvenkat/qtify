@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import styles from './AlbumSection.module.css'; // Import styles
+import styles from './NewAlbumSection.module.css'; 
 
 const NewAlbumsSection = () => {
   const [topAlbums, setTopAlbums] = useState([]);
