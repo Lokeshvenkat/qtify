@@ -38,7 +38,7 @@ const NewAlbumsSection = () => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={20}
-        slidesPerView={5}
+        slidesPerView={7}
         navigation
         className={styles.albumCarousel}
       >
