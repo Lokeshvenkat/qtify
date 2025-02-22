@@ -4,9 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Box, Button, Typography, IconButton } from '@mui/material';
-import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import styles from './NewAlbumSection.module.css'; 
+import styles from './AlbumSection.module.css'; // Import styles
 
 const NewAlbumsSection = () => {
   const [topAlbums, setTopAlbums] = useState([]);
@@ -31,69 +29,47 @@ const NewAlbumsSection = () => {
   }, []);
 
   return (
-    <Box sx={{ padding: '20px' }}>
+    <div className={styles.container}>
       {/* Top Albums Section */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-        <Typography variant="h5" fontWeight="bold">Top Albums</Typography>
-        <Button variant="contained" sx={{ backgroundColor: '#000', color: '#fff', '&:hover': { backgroundColor: '#222' } }}>
-          Show All
-        </Button>
-      </Box>
-      <Box sx={{ position: 'relative' }}>
-        <IconButton className={`prevTop ${styles.navButton}`}>
-          <ArrowBack />
-        </IconButton>
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
-          slidesPerView={5}
-          navigation={{ prevEl: '.prevTop', nextEl: '.nextTop' }}
-        >
-          {topAlbums.map((album) => (
-            <SwiperSlide key={album.id}>
-              <Box className={styles.albumCard}>
-                <img src={album.image} alt={album.title} className={styles.image} />
-                <Typography variant="subtitle1" sx={{ mt: 1, textAlign: 'center' }}>{album.title}</Typography>
-              </Box>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <IconButton className={`nextTop ${styles.navButton}`}>
-          <ArrowForward />
-        </IconButton>
-      </Box>
+      <div className={styles.sectionHeader}>
+        <h2>Top Albums</h2>
+        <button className={styles.showAllBtn}>Show All</button>
+      </div>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={5}
+        navigation
+        className={styles.albumCarousel}
+      >
+        {topAlbums.map((album) => (
+          <SwiperSlide key={album.id} className={styles.albumSlide}>
+            <img src={album.image} alt={album.title} className={styles.albumImage} />
+            <p className={styles.albumTitle}>{album.title}</p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       {/* New Albums Section */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 4, mb: 2 }}>
-        <Typography variant="h5" fontWeight="bold">New Albums</Typography>
-        <Button variant="contained" sx={{ backgroundColor: '#000', color: '#fff', '&:hover': { backgroundColor: '#222' } }}>
-          Show All
-        </Button>
-      </Box>
-      <Box sx={{ position: 'relative' }}>
-        <IconButton className={`prevNew ${styles.navButton}`}>
-          <ArrowBack />
-        </IconButton>
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
-          slidesPerView={5}
-          navigation={{ prevEl: '.prevNew', nextEl: '.nextNew' }}
-        >
-          {newAlbums.map((album) => (
-            <SwiperSlide key={album.id}>
-              <Box className={styles.albumCard}>
-                <img src={album.image} alt={album.title} className={styles.image} />
-                <Typography variant="subtitle1" sx={{ mt: 1, textAlign: 'center' }}>{album.title}</Typography>
-              </Box>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <IconButton className={`nextNew ${styles.navButton}`}>
-          <ArrowForward />
-        </IconButton>
-      </Box>
-    </Box>
+      <div className={styles.sectionHeader}>
+        <h2>New Albums</h2>
+        <button className={styles.showAllBtn}>Show All</button>
+      </div>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={5}
+        navigation
+        className={styles.albumCarousel}
+      >
+        {newAlbums.map((album) => (
+          <SwiperSlide key={album.id} className={styles.albumSlide}>
+            <img src={album.image} alt={album.title} className={styles.albumImage} />
+            <p className={styles.albumTitle}>{album.title}</p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
