@@ -1,30 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CustomCard from '../Card/Card';
-import styles from './Section.module.css';
+import styles from './Section.module.css'; 
 
 const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(apiEndpoint, {
-          headers: {
-            'Accept': 'application/json', // Ensure the server knows you expect JSON
-          },
-        });
-
-        if (response.data && Array.isArray(response.data)) {
-          setItems(response.data);
-        } else {
-          console.error('Unexpected response format:', response.data);
-        }
+        const response = await axios.get(apiEndpoint);
+        setItems(response.data);
       } catch (error) {
         console.error(`Error fetching data from ${apiEndpoint}:`, error);
-      } finally {
-        setLoading(false); // Set loading to false after the request completes
       }
     };
 
@@ -49,15 +37,11 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   return (
     <div className={styles.section}>
       <h2 className={styles.sectionHeader}>{title}</h2>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className={styles.grid}>
-          {displayedItems.map((item, index) => (
-            <CustomCard key={index} item={item} type={type} />
-          ))}
-        </div>
-      )}
+      <div className={styles.grid}>
+        {displayedItems.map((item, index) => (
+          <CustomCard key={index} item={item} type={type} />
+        ))}
+      </div>
       <button onClick={toggleView} className={styles.toggleButton}>
         {isCollapsed ? 'Show All' : 'Collapse'}
       </button>
