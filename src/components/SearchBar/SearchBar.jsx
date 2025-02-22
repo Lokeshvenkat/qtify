@@ -9,6 +9,7 @@ const SearchBar = () => {
         placeholder="search a song"
         className={styles.searchInput}
       />
+       <FaSearch className={styles["search-icon"]} />
     </div>
   );
 };
