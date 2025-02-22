@@ -5,8 +5,8 @@ import Section from '../Section/Section';
 const NewAlbumsSection = () => {
   const [topAlbums, setTopAlbums] = useState([]);
   const [newAlbums, setNewAlbums] = useState([]);
-  const [isTopAlbumsCollapsed, setIsTopAlbumsCollapsed] = useState(true);
-  const [isNewAlbumsCollapsed, setIsNewAlbumsCollapsed] = useState(true);
+  const [isTopAlbumsCollapsed, setIsTopAlbumsCollapsed] = useState(false);
+  const [isNewAlbumsCollapsed, setIsNewAlbumsCollapsed] = useState(false);
 
   useEffect(() => {
     console.log('Fetching albums data...');
