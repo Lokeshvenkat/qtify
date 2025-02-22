@@ -40,3 +40,29 @@
   font-size: 14px;
   margin-top: 5px;
 }
+
+const navButtonStyle = {
+  backgroundColor: '#34C94B',
+  color: 'white',
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  zIndex: 10,
+  '&:hover': {
+    backgroundColor: '#2EAC42',
+  },
+};
+
+const albumCardStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  textAlign: 'center',
+};
+
+const imageStyle = {
+  width: '100px',
+  height: '100px',
+  borderRadius: '10px',
+};
+
