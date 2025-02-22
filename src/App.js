@@ -10,7 +10,7 @@ import FAQ from './components/Faq/FAQ';
 
 function App() {
   return (
-   <div className="App" style={{ backgroundColor: 'black', minHeight: '100vh', color: 'white' }}>
+   <div className="App" style={{ backgroundColor: 'black', minHeight: '100vh' }}>
       <Navbar />
       <HeroSection />
       <NewAlbumsSection />
