@@ -8,17 +8,12 @@ import Logo from './components/Logo/Logo.jsx';
 import SearchBar from './components/SearchBar/SearchBar';
 
 function App() {
-  const apiEndpointTopAlbums = 'https://qtify-backend-labs.crio.do/albums/top';
-
-  //console.log("App component rendered");
-
   return (
     <div className="App">
       <Navbar />
       <Logo />
       <SearchBar />
       <HeroSection />
-      <Section title="Top Albums" apiEndpoint={apiEndpointTopAlbums} />
       <NewAlbumsSection />
       <SongsSection />
     </div>
