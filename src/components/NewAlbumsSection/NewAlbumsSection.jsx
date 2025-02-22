@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Section from './Section';
+import Section from './Section/Section';
 
 const NewAlbumsSection = () => {
   const [topAlbums, setTopAlbums] = useState([]);
