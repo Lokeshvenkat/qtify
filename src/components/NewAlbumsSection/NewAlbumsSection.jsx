@@ -47,13 +47,6 @@ const NewAlbumsSection = () => {
   return (
     <div>
       <Section
-        title="Top Albums"
-        items={topAlbums}
-        isCollapsed={isTopAlbumsCollapsed}
-        toggleView={toggleTopAlbumsView}
-        type="top-albums"
-      />
-      <Section
         title="New Albums"
         items={newAlbums}
         isCollapsed={isNewAlbumsCollapsed}
