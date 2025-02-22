@@ -9,6 +9,8 @@ const NewAlbumsSection = () => {
   const [isNewAlbumsCollapsed, setIsNewAlbumsCollapsed] = useState(true);
 
   useEffect(() => {
+    console.log('Fetching albums data...');
+
     const fetchData = async () => {
       try {
         const [topAlbumsResponse, newAlbumsResponse] = await axios.all([
@@ -18,6 +20,9 @@ const NewAlbumsSection = () => {
 
         const uniqueTopAlbums = Array.from(new Map(topAlbumsResponse.data.map(album => [album.title, album])).values());
         const uniqueNewAlbums = Array.from(new Map(newAlbumsResponse.data.map(album => [album.title, album])).values());
+
+        console.log('Fetched top albums:', uniqueTopAlbums);
+        console.log('Fetched new albums:', uniqueNewAlbums);
 
         setTopAlbums(uniqueTopAlbums);
         setNewAlbums(uniqueNewAlbums);
@@ -36,6 +41,8 @@ const NewAlbumsSection = () => {
   const toggleNewAlbumsView = () => {
     setIsNewAlbumsCollapsed(!isNewAlbumsCollapsed);
   };
+
+  console.log('Rendering NewAlbumsSection');
 
   return (
     <div>
