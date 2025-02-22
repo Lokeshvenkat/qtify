@@ -29,7 +29,7 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
     fetchData();
   }, [apiEndpoint,title]);
 
-  const displayedItems = isCollapsed ? items.slice(0, 4) : items;
+  const displayedItems = isCollapsed ? items.slice(0, 7) : items;
 
   let type;
   if (title.toLowerCase().includes('top albums')) {
