@@ -27,7 +27,6 @@ const SongsSection = () => {
     axios
       .get('https://qtify-backend-labs.crio.do/genres')
       .then((response) => {
-        console.log('Genres data:', response.data);
         if (Array.isArray(response.data.data)) {
           setGenres(response.data.data);
         } else {
