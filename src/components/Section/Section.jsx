@@ -27,7 +27,7 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
     };
 
     fetchData();
-  }, [apiEndpoint]);
+  }, [apiEndpoint,title]);
 
   const displayedItems = isCollapsed ? items.slice(0, 4) : items;
 
