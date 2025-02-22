@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CustomCard from '../Card/Card';
-import styles from './Section.module.css'; 
+import styles from './Section.module.css';
 
-const Section = ({ title, apiEndpoint }) => {
+const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
   const [items, setItems] = useState([]);
-  const [isCollapsed, setIsCollapsed] = useState(true); // Initialize as collapsed
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(apiEndpoint);
-        setItems(response.data);
+        if (response.data && Array.isArray(response.data)) {
+          setItems(response.data);
+        } else {
+          console.error('Unexpected response format:', response.data);
+        }
       } catch (error) {
         console.error(`Error fetching data from ${apiEndpoint}:`, error);
       }
@@ -19,10 +22,6 @@ const Section = ({ title, apiEndpoint }) => {
 
     fetchData();
   }, [apiEndpoint]);
-
-  const toggleView = () => {
-    setIsCollapsed(!isCollapsed); // Toggle the collapsed state
-  };
 
   const displayedItems = isCollapsed ? items.slice(0, 4) : items;
 
