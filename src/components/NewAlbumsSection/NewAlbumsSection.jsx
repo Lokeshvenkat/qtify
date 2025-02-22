@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Section from './Section';
+import Section from '../Section/Section';
 
 const NewAlbumsSection = () => {
   const [isTopAlbumsCollapsed, setIsTopAlbumsCollapsed] = useState(true);
