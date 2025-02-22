@@ -27,8 +27,8 @@ const Carousel = ({ items, type }) => {
           },
         }}
       >
-        {items.map((item) => (
-          <SwiperSlide key={item.id}>
+        {items.map((item, index) => (
+          <SwiperSlide key={index}>
             <CustomCard item={item} type={type} />
           </SwiperSlide>
         ))}
