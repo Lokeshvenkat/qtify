@@ -17,7 +17,9 @@ const Section = ({ title, apiEndpoint, isCollapsed, toggleView }) => {
         });
 
         if (response.data && Array.isArray(response.data)) {
-          setItems(response.data);
+          // Remove duplicates based on a unique identifier, e.g., title
+          const uniqueItems = Array.from(new Map(response.data.map(item => [item.title, item])).values());
+          setItems(uniqueItems);
         } else {
           console.error('Unexpected response format:', response.data);
         }
