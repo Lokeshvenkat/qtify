@@ -15,7 +15,6 @@ function App() {
     <div className="App" style={{ backgroundColor: 'black', minHeight: '100vh' }}>
       <Navbar />
       <HeroSection />
-      <SearchBar /> 
       <NewAlbumsSection />
       <SongsSection />
       <FAQ />
