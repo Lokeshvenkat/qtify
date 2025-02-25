@@ -9,13 +9,19 @@ import SearchBar from './components/SearchBar/SearchBar';
 import FAQ from './components/Faq/FAQ';
 
 function App() {
+  const searchData = [
+    { title: 'Album 1', slug: 'album-1' },
+    { title: 'Album 2', slug: 'album-2' },
+  ];
+
   return (
-   <div className="App" style={{ backgroundColor: 'black', minHeight: '100vh' }}>
+    <div className="App" style={{ backgroundColor: 'black', minHeight: '100vh' }}>
       <Navbar />
       <HeroSection />
+      <SearchBar searchData={searchData} /> 
       <NewAlbumsSection />
       <SongsSection />
-     <FAQ/>
+      <FAQ />
     </div>
   );
 }
