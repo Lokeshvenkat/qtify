@@ -12,8 +12,7 @@
   display: flex;
   align-items: center;
   flex: 1;
-  border: 1px solid #ccc;
-  border-radius: 25px;
+  border-radius: 30 px;
   padding: 5px;
   background-color: white;
 }
