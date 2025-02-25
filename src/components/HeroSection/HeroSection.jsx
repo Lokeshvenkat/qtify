@@ -1,15 +1,19 @@
 import React from 'react';
-import headphonesImage from '../../assets/hero.png';
 import styles from './HeroSection.module.css';
 
 const HeroSection = () => {
   return (
     <div className={styles.heroSection}>
-      <div className={styles.text}>
-        100 Thousand Songs, ad-free
+      <div>
+        <h1>100 Thousand Songs, ad-free</h1>
+        <h1>Over thousands podcast episodes</h1>
       </div>
       <div className={styles.image}>
-        <img src={headphonesImage} alt="Headphones" />
+        <img
+          src={require('../../assets/hero.png')}
+          width={212}
+          alt="Headphones"
+        />
       </div>
     </div>
   );
