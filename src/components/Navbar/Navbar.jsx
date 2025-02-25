@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <Logo />
-      <SearchBar className=searchBar />
+      <SearchBar className={styles.searchBar} />
       <FeedbackButton text="Give Feedback" />
     </nav>
   );
