@@ -1,38 +1,38 @@
 import React from 'react';
-import styles from './SearchBar.module.css';
-import SearchIcon from '@mui/icons-material/Search';
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
+import './SearchBar.module.css';
+import SearchSymbol from '@mui/icons-material/Search';
+import AutoComplete from '@mui/material/Autocomplete';
+import InputField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
 
-const SearchBar = ({ searchData, placeholder = "Search an album of your choice" }) => {
+const SearchBar = ({ data, placeholderText = "Search for an album" }) => {
   const navigate = useNavigate();
 
-  const handleSubmit = (event, value) => {
+  const handleFormSubmit = (event, selectedValue) => {
     event.preventDefault();
-    if (value) {
-      navigate(`/album/${value.slug}`);
+    if (selectedValue) {
+      navigate(`/album/${selectedValue.slug}`);
     }
   };
 
   return (
-    <div className={styles.searchBarContainer}>
-      <form onSubmit={handleSubmit} className={styles.searchForm}>
-        <Autocomplete
-          options={searchData || []}
+    <div className="search-container">
+      <form onSubmit={handleFormSubmit} className="search-form">
+        <AutoComplete
+          options={data || []}
           getOptionLabel={(option) => option.title}
           renderInput={(params) => (
-            <TextField
+            <InputField
               {...params}
-              placeholder={placeholder}
-              className={styles.searchInput}
+              placeholder={placeholderText}
+              className="search-input-field"
             />
           )}
-          onChange={(event, value) => handleSubmit(event, value)}
-          className={styles.searchInputContainer}
+          onChange={(event, selectedValue) => handleFormSubmit(event, selectedValue)}
+          className="search-input-wrapper"
         />
-        <button type="submit" className={styles.searchButton}>
-          <SearchIcon />
+        <button type="submit" className="search-submit-button">
+          <SearchSymbol />
         </button>
       </form>
     </div>
