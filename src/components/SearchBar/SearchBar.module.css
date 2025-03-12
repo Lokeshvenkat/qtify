@@ -1,77 +1,23 @@
-.searchBarContainer {
-  position: relative;
-  width: 400px; /* Adjust width as needed */
+.wrapper {
+    display: flex;
+    align-items: center;
+    height: 48px;
 }
 
-.searchForm {
-  display: flex;
-  align-items: center;
-}
+.search {
+    height: 100%;
+    width: 502px;
+    padding: 14px 20px;
+    border-radius: 8px 0 0 8px;
 
-.searchInputContainer {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  border-radius: 30 px;
-  padding: 5px;
-  background-color: white;
-}
-
-.searchInput {
-  flex: 1;
-  border: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  outline: none;
-  border-radius: 25px;
-}
-
-.searchIcon {
-  margin-right: 10px;
-  color: gray;
+    border: 1px solid var(--color-black);
 }
 
 .searchButton {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-left: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 0 30px 30px 0;
-}
-
-.searchButton:hover {
-  background-color: #f0f0f0;
-}
-
-.listbox {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  border-radius: 0px 0px 10px 10px;
-  border: 1px solid var(--color-primary);
-  top: 100%; /* Position below the input */
-  max-height: 500px;
-  z-index: 10;
-  overflow-y: auto;
-  left: 0;
-  right: 0;
-  list-style: none;
-  background-color: var(--color-black);
-}
-
-.listItem {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.listItem:hover {
-  background-color: #4a8df6;
-  color: white;
-}
-
-.listItem[aria-selected="true"] {
-  background-color: #2977f5;
-  color: white;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid var(--color-black);
+    padding: 14px 20px;
+    border-left: none;
 }
