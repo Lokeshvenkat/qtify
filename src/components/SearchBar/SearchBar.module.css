@@ -1,7 +1,7 @@
 .search-bar-container {
   display: flex;
   align-items: center;
-  height: 48px;
+  height: 100px;
   width: 502px;
   border: 1px solid var(--color-black);
   border-radius: 8px;
@@ -23,7 +23,6 @@
 
 .search-icon {
   font-size: 24px;
-  color: var(--color-black);
   cursor: pointer;
   padding: 14px 20px;
   border-radius: 0 8px 8px 0;
