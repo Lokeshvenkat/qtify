@@ -1,16 +1,16 @@
 import React from 'react';
-import Logo from '../Logo/Logo';
-import SearchBar from '../SearchBar/SearchBar';
-import FeedbackButton from '../FeedbackButton/FeedbackButton';
-import styles from './Navbar.module.css';
+import LogoComponent from '../Logo/Logo';
+import SearchComponent from '../SearchBar/SearchBar';
+import FeedbackComponent from '../FeedbackButton/FeedbackButton';
+import './Navbar.module.css';
 
 const Navbar = () => {
   return (
-    <nav className={styles.navbar}>
-      <Logo />
-      <SearchBar className={styles.searchBar} />
-      <FeedbackButton text="Give Feedback" />
-    </nav>
+    <header className="navbar-container">
+      <LogoComponent />
+      <SearchComponent customClass="search-bar" />
+      <FeedbackComponent label="Give Feedback" />
+    </header>
   );
 };
 
