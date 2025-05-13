@@ -1,0 +1,52 @@
+.feedbackContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.feedbackBox {
+  width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedbackBox h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feedbackBox form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedbackBox label {
+  margin-bottom: 10px;
+}
+
+.feedbackBox input,
+.feedbackBox select,
+.feedbackBox textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.feedbackBox button {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feedbackBox button:hover {
+  background-color: var(--color-primary);
+}

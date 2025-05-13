@@ -1,0 +1,14 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titletext {
+  background-color: var(--color-black);
+  color: white;
+}
+
+.arrow {
+  color: white;
+}

@@ -1,0 +1,39 @@
+
+.button {
+  background-color: var(--color-black);
+  color: var(--color-primary);
+  border-radius: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+@media (max-width: 640px) {
+  .button {
+    padding-top: 2px;   
+    padding-bottom: 2px;
+    margin-left: 15px;
+    font-size: 14px;   
+  }
+}
+
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .button {
+    padding-top: 2px;   
+    padding-bottom: 2px;
+    font-size: 14px;    
+    margin-left: 10px;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .button {
+    padding-top: 5px;  
+    padding-bottom: 5px;
+    font-size: 18px;   
+  }
+}

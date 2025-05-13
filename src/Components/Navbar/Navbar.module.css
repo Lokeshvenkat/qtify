@@ -1,0 +1,41 @@
+.navbar {
+  background-color: var(--color-primary);
+  height: 74px;
+  width: 100vw;
+  padding: 0px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0px 16px; 
+    height: 60px; 
+    justify-content: space-around;
+  }
+}
+
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .navbar {
+    padding: 0px 24px; 
+    height: 64px;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .navbar {
+    padding: 0px 32px;
+    height: 70px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .navbar {
+    padding: 0px 48px; 
+    height: 74px; 
+  }
+}
