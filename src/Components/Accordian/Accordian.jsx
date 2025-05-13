@@ -14,7 +14,7 @@ function Accordian() {
       <div className={styles.Accordian}>
         {/* Section heading */}
         <div className={styles.head}>
-          <h1>FAQ</h1>
+          <h1>FAQs</h1>
         </div>
 
         {/* First FAQ item */}
